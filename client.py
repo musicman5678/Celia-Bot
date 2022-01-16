@@ -11,8 +11,8 @@ client.remove_command("help")
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=nextcord.Status.online, activity=nextcord.Game('!'))
-    print('Celia bot is ready')
+    await client.change_presence(status=nextcord.Status.online, activity=nextcord.Game('PUT GAME THAT YOUR BOT IS PLAYING HERE'))
+    print('(NAME OF YOU BOT) bot is ready')
 
 @client.command()
 async def load(ctx, extension):
@@ -34,8 +34,8 @@ async def help(ctx):
     embed.add_field(name="Moderation", value="Bring up info yourself", inline=True)
     embed.add_field(name="Information", value="Bring up info on the server", inline=True)
     embed.add_field(name="Fun and Misc", value="Bring up info on the server", inline=True)
-    embed.add_field(name="Links", value='[Support server](https://discord.gg/dKBgKYUw)\
-        [Click here to invite me!](https://discord.com/api/oauth2/authorize?client_id=931664099232845854&permissions=1635782753526&scope=applications.commands%20bot)', inline=True)
+    embed.add_field(name="Links", value='[Support server](LINK TO YOUR BOTS SUPPORT SERVER)\
+        [Click here to invite me!](INVITE LINK TO YOUR BOT HERE)', inline=True)
     
     await ctx.message.delete()
     await ctx.author.send(embed=embed)
@@ -43,7 +43,7 @@ async def help(ctx):
 @client.command()
 async def userinfo(ctx, *, user: nextcord.Member = None):
     user = user or ctx.author
-
+    #Change this however you would like
     embed=nextcord.Embed(title="Userinfo", description=f"Here is the info i retrieved about {user.mention}", color=user.color)
     embed.add_field(name="Name", value=user.name, inline=True)
     embed.add_field(name="Nickname", value=user.nick, inline=True)
@@ -57,7 +57,7 @@ async def serverinfo(ctx):
     role_count = len(ctx.guild.roles)
     list_of_bots = [bot.mention for bot in ctx.guild.members if bot.bot]
     user = ctx.author
-
+    #change this however you would like
     serverinfoEmbed=nextcord.Embed(title="Server Info", color=user.color)
     serverinfoEmbed.add_field(name="Name", value=f"{ctx.guild.name}", inline=True)
     serverinfoEmbed.add_field(name="Member Count", value=ctx.guild.member_count, inline=True)
